@@ -24,5 +24,15 @@ print(s)
 # runner = unittest.TextTestRunner()
 # runner.run(s)
 
+from HTMLTestReportCN import HTMLTestRunner
+
+# 创建一个html文件，以写的模式打开，支持中文
+with open("report.html","wb") as fs:
+    # 运行测试用例，将结果写入html中
+    runner = HTMLTestRunner(fs)
+    runner.run(s)
+
+
+
 
 
