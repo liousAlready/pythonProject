@@ -1,6 +1,6 @@
 import os
 import unittest
-from test_deom.test_login import TestLogin
+from test_demo.test_login import TestLogin
 
 # 1. 实例化测试套件 TestSuite
 # s = unittest.TestSuite()
@@ -16,7 +16,9 @@ from test_deom.test_login import TestLogin
 # 3.在文件当做过滤用例：集成了unittest.TestCase类的测试类，类当中以test_开头的测试函数
 
 
-s=unittest.TestLoader().discover("/Users/lishouwu/PycharmProjects/pythonProject/test_deom")
+# s=unittest.TestLoader().discover("/Users/lishouwu/PycharmProjects/pythonProject/test_demo")# mac路径
+s=unittest.TestLoader().discover("test_demo")
+
 print(type(s))
 print(s)
 
@@ -29,7 +31,7 @@ from HTMLTestReportCN import HTMLTestRunner
 # 创建一个html文件，以写的模式打开，支持中文
 with open("report.html","wb") as fs:
     # 运行测试用例，将结果写入html中
-    runner = HTMLTestRunner(fs)
+    runner = HTMLTestRunner(fs,title="单元测试报告",tester="li")
     runner.run(s)
 
 
