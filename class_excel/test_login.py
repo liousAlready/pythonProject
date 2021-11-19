@@ -18,6 +18,7 @@ exc = HandleExcel(file_path, "login")
 cases = exc.read_all_data()
 exc.close_file()
 
+# print(cases)
 
 @ddt
 class TestLogin(unittest.TestCase):
@@ -27,7 +28,7 @@ class TestLogin(unittest.TestCase):
         # 1.测试数据 　2.测试步骤
         res = login_check(case['user'], case['password'])
         # 3.断言
-        self.assertEqual(res, case['check'])
+        self.assertEqual(res, eval(case['check']))
 
 
 if __name__ == '__main__':

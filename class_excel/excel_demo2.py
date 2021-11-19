@@ -8,11 +8,11 @@ from openpyxl import load_workbook
 
 """
 datas = [
-    {"user": "test", "password": "123456", "check": {"code": 0, 'msg': "登录成功"}},
-    {"user": "test", "password": "1234561212", "check": {'code': 1, 'msg': '账号或密码不正确'}},
-    {"user": "test12212", "password": "123456", "check": {'code': 1, 'msg': '账号或密码不正确'}}
-    {"user": "", "password": "123456", "check": {"code": 1, "msg": "所有数据不能为空"}},
-    {"user": "", "password": "", "check": {"code": 1, "msg": "所有数据不能为空"}},
+    {"user": "test", "password": "123456", "check": "{'code': 0, 'msg': "登录成功"}"},
+    {"user": "test", "password": "1234561212", "check": "{'code': 1, 'msg': '账号或密码不正确'}"},
+    {"user": "test12212", "password": "123456", "check": "{'code': 1, 'msg': '账号或密码不正确'}"},
+    {"user": "", "password": "123456", "check": "{'code': 1, 'msg': '所有数据不能为空'}"},
+    {"user": "", "password": "", "check": {"code": 1, "msg": "所有数据不能为空"}}
 ]
 
 
