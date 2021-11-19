@@ -1,0 +1,30 @@
+2021-11-19 14:42:54,505 pytest INFO test_login.py -30行: *********** 开始测试 ***********
+2021-11-19 14:42:54,506 pytest INFO test_login.py -31行: 测试数据为：{'user': 'test', 'password': '123456', 'check': '{"code": 0, "msg": "登录成功"}'}
+2021-11-19 14:42:54,506 pytest INFO test_login.py -34行: 实际运行结果为：{'code': 0, 'msg': '登录成功'}
+2021-11-19 14:42:54,506 pytest INFO test_login.py -41行: 断言成功，用例通过！
+2021-11-19 14:42:54,506 pytest INFO test_login.py -42行: ********** 测试用例执行结束 **********
+2021-11-19 14:42:54,509 pytest INFO test_login.py -30行: *********** 开始测试 ***********
+2021-11-19 14:42:54,509 pytest INFO test_login.py -31行: 测试数据为：{'user': 'test', 'password': 1234561212, 'check': '{"code": 1, "msg": "账号或密码不正确"}'}
+2021-11-19 14:42:54,510 pytest INFO test_login.py -34行: 实际运行结果为：{'code': 1, 'msg': '账号或密码不正确'}
+2021-11-19 14:42:54,510 pytest INFO test_login.py -41行: 断言成功，用例通过！
+2021-11-19 14:42:54,510 pytest INFO test_login.py -42行: ********** 测试用例执行结束 **********
+2021-11-19 14:42:54,511 pytest INFO test_login.py -30行: *********** 开始测试 ***********
+2021-11-19 14:42:54,511 pytest INFO test_login.py -31行: 测试数据为：{'user': 'test12221', 'password': 123456, 'check': '{"code": 1, "msg": "账号或密码不正确"}'}
+2021-11-19 14:42:54,512 pytest INFO test_login.py -34行: 实际运行结果为：{'code': 1, 'msg': '账号或密码不正确'}
+2021-11-19 14:42:54,512 pytest INFO test_login.py -41行: 断言成功，用例通过！
+2021-11-19 14:42:54,512 pytest INFO test_login.py -42行: ********** 测试用例执行结束 **********
+2021-11-19 14:44:12,417 pytest INFO test_login.py -30行: *********** 开始测试 ***********
+2021-11-19 14:44:12,418 pytest INFO test_login.py -31行: 测试数据为：{'user': 'test', 'password': '123456', 'check': '{"code": 0, "msg": "登录成功"}'}
+2021-11-19 14:44:12,418 pytest INFO test_login.py -34行: 实际运行结果为：{'code': 0, 'msg': '登录成功'}
+2021-11-19 14:44:12,418 pytest INFO test_login.py -42行: 断言成功，用例通过！
+2021-11-19 14:44:12,418 pytest INFO test_login.py -43行: ********** 测试用例执行结束 **********
+2021-11-19 14:44:12,418 pytest INFO test_login.py -30行: *********** 开始测试 ***********
+2021-11-19 14:44:12,418 pytest INFO test_login.py -31行: 测试数据为：{'user': 'test', 'password': 1234561212, 'check': '{"code": 1, "msg": "账号或密码不正确"}'}
+2021-11-19 14:44:12,419 pytest INFO test_login.py -34行: 实际运行结果为：{'code': 1, 'msg': '账号或密码不正确'}
+2021-11-19 14:44:12,419 pytest INFO test_login.py -42行: 断言成功，用例通过！
+2021-11-19 14:44:12,419 pytest INFO test_login.py -43行: ********** 测试用例执行结束 **********
+2021-11-19 14:44:12,419 pytest INFO test_login.py -30行: *********** 开始测试 ***********
+2021-11-19 14:44:12,419 pytest INFO test_login.py -31行: 测试数据为：{'user': 'test12221', 'password': 123456, 'check': '{"code": 1, "msg": "账号或密码不正确"}'}
+2021-11-19 14:44:12,419 pytest INFO test_login.py -34行: 实际运行结果为：{'code': 1, 'msg': '账号或密码不正确'}
+2021-11-19 14:44:12,419 pytest INFO test_login.py -42行: 断言成功，用例通过！
+2021-11-19 14:44:12,420 pytest INFO test_login.py -43行: ********** 测试用例执行结束 **********

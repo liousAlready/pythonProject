@@ -26,6 +26,8 @@ print(s)
 # runner = unittest.TextTestRunner()
 # runner.run(s)
 
+
+
 from HTMLTestReportCN import HTMLTestRunner
 
 # 创建一个html文件，以写的模式打开，支持中文
