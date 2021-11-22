@@ -3,15 +3,18 @@
 # @Author : Limusen
 # @File : my_logger
 
+import time
 import logging
-from day3.class_config import conf
+import os
+from day4.Common.handle_config import conf
+from day4.Common.handle_path import logs_dir
 
 
 class MyLogger(logging.Logger):
 
-    def __init__(self, name, level=logging.INFO, file=None):
+    def __init__(self, file=None):
         # 设置日志级别/渠道/格式
-        super(MyLogger, self).__init__(name, level)
+        super().__init__(conf.get("log", "name"), conf.get("log", "level"))
 
         # 日志格式
         fmt = "%(asctime)s %(name)s %(levelname)s %(filename)s -%(lineno)d行: %(message)s"
@@ -30,13 +33,9 @@ class MyLogger(logging.Logger):
             self.addHandler(handle2)
 
 
-# 是否需要写入文件
 if conf.getboolean("log", "file_ok"):
-    file_name = conf.get("log", "file_name")
+    file_name = os.path.join(logs_dir, 'Api_%s.log' % time.strftime('%Y_%m_%d'))
 else:
     file_name = None
 
-logger = MyLogger(conf.get("log", "name"), level=conf.get("log", "level"), file="123.log")
-
-if __name__ == '__main__':
-    logger.info("测试....")
+logger = MyLogger(file_name)

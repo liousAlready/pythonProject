@@ -4,8 +4,7 @@
 # @File : my_logger
 
 import logging
-from day3.class_config import conf
-
+from day4.Common.handle_config import conf
 
 class MyLogger(logging.Logger):
 
@@ -36,7 +35,7 @@ if conf.getboolean("log", "file_ok"):
 else:
     file_name = None
 
-logger = MyLogger(conf.get("log", "name"), level=conf.get("log", "level"), file="123.log")
-
-if __name__ == '__main__':
-    logger.info("测试....")
+# logger = MyLogger(conf.get("log", "name"), level=conf.get("log", "level"), file="123.log")
+#
+# if __name__ == '__main__':
+#     logger.info("测试....")

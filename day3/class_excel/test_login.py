@@ -12,7 +12,7 @@ import os
 from ddt import ddt, data
 from day3.test_demo import login_check
 from day3.class_excel import HandleExcel
-from day3.class_logger.my_logger import logger
+from day3.class_logger.sssmy_logger import logger
 
 file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'login_cases.xlsx')
 exc = HandleExcel(file_path, "login")

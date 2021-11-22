@@ -6,14 +6,15 @@
 import os
 import unittest
 from HTMLTestReportCN import HTMLTestRunner
+from day4.Common.handle_path import *
 
-case_dir = os.path.dirname(os.path.abspath(__file__))
+# case_dir = os.path.dirname(os.path.abspath(__file__))
 # print(case_dir)
 
 s = unittest.TestLoader().discover(case_dir)
 
 # 创建一个html文件，以写的模式打开，支持中文
-with open("Outputs/reports/运营后台登录用例.html", "wb") as fs:
+with open(reports_dir+"/运营后台登录用例.html", "wb") as fs:
     # 运行测试用例，将结果写入html中
     runner = HTMLTestRunner(fs, title="单元测试报告", tester="li")
     runner.run(s)

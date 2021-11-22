@@ -5,7 +5,7 @@
 
 
 import requests
-from day3.class_logger.my_logger import logger
+from day4.Common.my_logger import logger
 
 
 def __handle_heard(token=None):
@@ -26,12 +26,12 @@ def __handle_heard(token=None):
 
 def send_requests(method, url, data=None, token=None):
     # # 得到请求头
-    # logger.info('发起一次HTTP请求')
+    logger.info('发起一次HTTP请求')
     headers = __handle_heard(token)
-    # logger.info('请求头为:{}'.format(headers))
-    # logger.info('请求方法为:{}'.format(method))
-    # logger.info('请求url为:{}'.format(url))
-    # logger.info('请求数据为:{}'.format(data))
+    logger.info('请求头为:{}'.format(headers))
+    logger.info('请求方法为:{}'.format(method))
+    logger.info('请求url为:{}'.format(url))
+    logger.info('请求数据为:{}'.format(data))
     # 根据请求类型，调用请求方法
     method = method.upper()  # 大写处理
     if method == "GET":
