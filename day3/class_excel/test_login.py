@@ -10,9 +10,9 @@
 import unittest
 import os
 from ddt import ddt, data
-from test_demo.class_2021_11_15 import login_check
-from class_excel.handle_excel import HandleExcel
-from class_logger.my_logger import logger
+from day3.test_demo import login_check
+from day3.class_excel import HandleExcel
+from day3.class_logger.my_logger import logger
 
 file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'login_cases.xlsx')
 exc = HandleExcel(file_path, "login")

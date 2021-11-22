@@ -8,8 +8,7 @@
 # explain   : 文件说明
 
 import unittest
-import ddt
-from test_demo.class_2021_11_15 import login_check
+from day3.test_demo import login_check
 
 """
 

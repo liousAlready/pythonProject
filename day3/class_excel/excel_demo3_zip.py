@@ -4,10 +4,7 @@
 # @File : workbook
 
 import os
-from ddt import ddt, data
-import unittest
 from openpyxl import load_workbook
-from test_demo.test_login import login_check
 
 file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'login_cases.xlsx')
 # print(file_path)

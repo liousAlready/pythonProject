@@ -4,13 +4,12 @@
 # @File : test_login
 
 import os
-import json
 import unittest
 from ddt import ddt, data
-from day4.handle_excel import HandleExcel
-from day4.handle_requests import send_requests
+from day4.Common.handle_excel import HandleExcel
+from day4.Common.handle_requests import send_requests
 
-he = HandleExcel(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'api_cases.xlsx'), "login")
+he = HandleExcel(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../TestDatas/api_cases.xlsx'), "login")
 cases = he.read_all_data()
 he.close_file()
 

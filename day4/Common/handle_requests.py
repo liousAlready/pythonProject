@@ -5,7 +5,7 @@
 
 
 import requests
-from class_logger.my_logger import logger
+from day3.class_logger.my_logger import logger
 
 
 def __handle_heard(token=None):

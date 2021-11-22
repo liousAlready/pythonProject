@@ -4,7 +4,7 @@
 # @File : my_logger
 
 import logging
-from class_config.config import conf
+from day3.class_config import conf
 
 
 class MyLogger(logging.Logger):

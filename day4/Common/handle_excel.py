@@ -7,7 +7,7 @@ import os
 import json
 from openpyxl import load_workbook
 
-file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'api_cases.xlsx')
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../TestDatas/api_cases.xlsx')
 
 
 class HandleExcel:
