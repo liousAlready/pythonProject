@@ -12,11 +12,6 @@ Session类:创建一个会话对象
 
 import requests
 
-# 第一步 创建对象
-s = requests.Session()
-print("登录之前的cookies:", s.cookies)
-# 第二步 登录,得到cookies鉴权
-
 url = "http://userback.yaoweilai.cn:88/api/gateway/system/v2/login"
 params = {
     "loginInfoDto":
@@ -28,19 +23,16 @@ headers = {
     "Accept": "application/json, text/plain, */*"
 }
 
-result = s.post(url, json=params, headers=headers)
+result = requests.post(url, json=params, headers=headers)
+result_dict = result.json()
+print(result.text)
+token = result_dict["data"]["token"]
+print(token)
 
-# print("登录响应的cookies:", result.cookies)
-#
-# print("登录之后的cookies:", s.cookies)  # 主动会将响应的set-cookies添加到s对象当中.
-
-# 主动获取cookies
-cookies = result.cookies
-print(cookies)
-
-# 　第二部：获取用户信息
-
+# 将token添加到请求头当中
+headers["Authorization"] = "Bearer {}".format(token)
+params = {"userPhone": "", "userName": "", "pageIndex": 1, "pageSize": 10, "identity": "BackGroundUser"}
 get_list_url = "http://userback.yaoweilai.cn:88/api/gateway/system/backGroundUser/pageList"
-
-resp = requests.post(get_list_url,cookies=cookies)
+# 获取内部人员列表接口的值
+resp = requests.post(get_list_url, json=params, headers=headers)
 print(resp.json())
