@@ -10,11 +10,14 @@ from day4.Common.handle_excel import HandleExcel
 from day4.Common.handle_requests import send_requests
 from day4.Common.handle_path import datas_dir
 from day4.Common.my_logger import logger
+from day4.Common.handle_db import HandleDb
 
 # he = HandleExcel(os.path.join(os.path.dirname(os.path.abspath(__file__)), '../TestDatas/api_cases.xlsx'), "login")
 he = HandleExcel(os.path.join(datas_dir, "api_cases.xlsx"), "login")
 cases = he.read_all_data()
 he.close_file()
+
+db = HandleDb()
 
 
 @ddt
@@ -38,6 +41,10 @@ class TestLogin(unittest.TestCase):
         try:
             self.assertEqual(response.json()['code'], case["expected"]['code'])
             self.assertEqual(response.json()['desc'], case["expected"]['desc'])
+            # 如果check_sql有值，说明数据库校验
+            if case['check_sql']:
+                result = db.select_one_data(case['check_sql'])
+                self.assertIsNotNone(result)
         except AssertionError as e:
             logger.error("用例执行失败，原因：{}".format(e.__str__()))
             raise
