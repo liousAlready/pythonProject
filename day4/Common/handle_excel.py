@@ -32,10 +32,10 @@ class HandleExcel:
             for val in item:  # 获取每一行的值
                 values.append(val.value)
             res = dict(zip(titles, values))  # title和每一行数据,打包成字典
-            # 将请求数据从json转换成字典对象
-            res['request_data'] = json.loads(res['request_data'])
-            res['expected'] = json.loads(res['expected'])
-            # res['expected'] = eval(res['expected'])
+            # # 将请求数据从json转换成字典对象
+            # res['request_data'] = json.loads(res['request_data'])
+            # res['expected'] = json.loads(res['expected'])
+
             all_datas.append(res)
         return all_datas
 
