@@ -13,6 +13,8 @@
 import os
 import random
 from day4.Common.handle_db import HandleDb
+from day4.Common.handle_config import conf
+from day4.Common.handle_requests import send_requests
 
 prefix = [133, 149, 153, 173, 177, 180, 181, 189, 199,
           130, 131, 132, 145, 155, 156, 166, 171, 175,
@@ -37,6 +39,21 @@ def get_new_phone():
             return phone
 
 
+def get_old_phone():
+    """
+    从配置文件中获取制定用户名和密码
+    确认此账号,在系统当中是注册了的
+    :return: 账号跟密码
+    """
+    user = conf.get("user", "user")
+    password = conf.get("user", "password")
+    # 如果数据库查找到user,就直接返回 ,如果没有则调用注册接口
+    # 不管注册与否,直接调用注册接口
+    send_requests("post","/ss",user)
+
+
+
+
 
 def __generator_phone():
     index = random.randint(0, len(prefix) - 1)
@@ -47,6 +64,7 @@ def __generator_phone():
 
     return str(phone)
 
+
 # print(__generator_phone())
 
 
@@ -56,4 +74,4 @@ def __generator_phone():
 #
 # print(__generator_phone())
 
-print(get_new_phone())
+# print(get_new_phone())

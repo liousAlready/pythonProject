@@ -44,11 +44,13 @@ class HandleExcel:
 
 
 if __name__ == '__main__':
-    fix = HandleExcel(file_path, "login")
+    fix = HandleExcel(file_path, "create")
     cases = fix.read_all_data()
     fix.close_file()
 
-    case = cases[0]
-    print(case)
-
-    print(case['expected'])
+    # case = cases[0]
+    # print(case)
+    #
+    # print(case['expected'])
+    for i in cases:
+        print(i)

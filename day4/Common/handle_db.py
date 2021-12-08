@@ -73,7 +73,7 @@ if __name__ == '__main__':
     sql = "select id from back_ground_user where user_phone = 15574866554;"
     token_case = {
         "method": "POST",
-        "url": "http://userback.yaoweilai.cn:88/api/gateway/system/v2/login",
+        "url": "/api/gateway/system/v2/login",
         "request_data": {"loginInfoDto": {"phone": "13252254992", "pass": "254992", "type": "BackGroundUser",
                                           "loginType": "LoginPass"}}
     }
@@ -84,7 +84,7 @@ if __name__ == '__main__':
 
     case = {
         "method": "POST",
-        "url": "http://userback.yaoweilai.cn:88/api/gateway/system/backGroundUser/addBackGroundUser",
+        "url": "/api/gateway/system/backGroundUser/addBackGroundUser",
         "request_data": {"userName": "123", "userPhone": "15574866554", "userPass": "", "identity": "BackGroundUser",
                          "roleId": 1, "userGenerateCode": ""}
     }

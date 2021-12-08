@@ -14,6 +14,23 @@
 from day4.Common.handle_excel import HandleExcel
 
 
+class EnvData:
+    """
+    存储用例需要用到的数据
+    """
+    pass
+
+
+def clear_EnvData_attrs():
+    # 清理EnvData属性
+    values = dict(EnvData.__dict__.items())
+    for key, value in values.items():
+        if key.startswith("__"):
+            pass
+        else:
+            delattr(EnvData, key)
+
+
 def replace_mark_with_data(case, mark, real_data):
     """
     遍历一个http请求用户涉及到的所有数据,如果说每一个数据有需要替换的,都会替换
@@ -23,9 +40,9 @@ def replace_mark_with_data(case, mark, real_data):
     :return:
     """
     for key, value in case.items():
-        if value is not None and isinstance(value,str):
-            if value.find(mark) !=-1:
-                case[key] = value.replace(mark,real_data)
+        if value is not None and isinstance(value, str):
+            if value.find(mark) != -1:
+                case[key] = value.replace(mark, real_data)
 
     return case
 
@@ -34,5 +51,5 @@ if __name__ == '__main__':
     case = {
         "request_data": '{"loginInfoDto": {"phone": "#phone#", "pass": "#phone#"}'
     }
-    phone = replace_mark_with_data(case,"#phone#","1557455")
+    phone = replace_mark_with_data(case, "#phone#", "1557455")
     print(phone)

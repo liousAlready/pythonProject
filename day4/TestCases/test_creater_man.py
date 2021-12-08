@@ -7,6 +7,7 @@
 import os
 import unittest
 import json
+import jsonpath
 from ddt import ddt, data
 from day4.Common.handle_excel import HandleExcel
 from day4.Common.handle_requests import send_requests
@@ -37,7 +38,8 @@ class TestCreate(unittest.TestCase):
 
         token = send_requests(token_case['method'], token_case['url'], token_case['request_data'])  # 接口
         result_dict = token.json()
-        cls.login_token = result_dict["data"]["token"]
+        # cls.login_token = result_dict["data"]["token"]
+        cls.login_token = jsonpath.jsonpath(result_dict, "$.data.token")[0]
 
     @data(*cases)
     def test_create_success(self, case):
@@ -52,7 +54,8 @@ class TestCreate(unittest.TestCase):
 
         # # 将请求数据从json转换成字典对象
         case['request_data'] = json.loads(case['request_data'])
-
+        global false, null, true
+        false = null = true = ''
         expected = eval(case['expected'])
 
         # # 步骤 测试数据 - 发起请求
